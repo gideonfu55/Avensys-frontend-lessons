@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Activity 62 - Flex Order</title>
+
+  <style>
+    .container {
+      background-color: white;
+      display: inline-flex;
+      border: 10px maroon solid;
+    }
+
+    .item {
+      color: white;
+      font-size: 75px;
+      padding: 5px;
+      text-align: center;
+      height: 500px;
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item item1" style="background-color: red; order: 2;">1</div>
+    <div class="item item2" style="background-color: green;">2</div>
+    <div class="item item3" style="background-color: orange; order: 4">3</div>
+    <div class="item item4" style="background-color: yellow; order: 5">4</div>
+    <div class="item item5" style="background-color: lightblue; order: 6">5</div>
+    <div class="item item5" style="background-color: gold; order: 3">6</div>
+  </div>
+</body>
+</html>
