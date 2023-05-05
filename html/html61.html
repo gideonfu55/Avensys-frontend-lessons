@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Activity 61 - Flex Column & Row</title>
+
+  <style>
+    .container {
+      background-color: white;
+      display: inline-flex;
+      border: 10px maroon solid;
+    }
+
+    .item {
+      padding: 5px;
+      font-size: 75px;
+      color: white;
+      text-align: center;
+      height: 500px;
+      width: 100px;
+    }
+
+    .item1, .item2, .item3 {
+      height: 100px;
+    }
+
+    .flexCol1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .flexCol2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .flexCol3 {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="flexCol1">
+      <div class="item item1" style="background-color: red;">1</div>
+    </div>
+    <div class="flexCol2">
+      <div class="item item2" style="background-color: green;">2</div>
+    </div>
+    <div class="flexCol3">
+      <div class="item item3" style="background-color: orange;">3</div>
+    </div>
+
+    <div class="item item4" style="background-color: yellow;">4</div>
+    <div class="item item5" style="background-color: lightblue;">5</div>
+    <div class="item item5" style="background-color: gold;">6</div>
+
+  </div>
+</body>
+</html>

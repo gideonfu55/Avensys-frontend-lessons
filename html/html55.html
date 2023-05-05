@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Forms</title>
+</head>
+<body>
+  <form>
+    <!-- All types of form inputs: -->
+    <fieldset>
+      <legend>Your Particulars</legend>
+      <table>
+        <tr>
+          <td><label>First Name:</label></td>
+          <td><input type="text" required></td>
+        </tr>
+
+        <tr>
+          <td><label>Last Name:</label></td>
+          <td><input type="text" required></td>
+        </tr>
+
+        <tr>
+          <td><label>Email:</label></td>
+          <td><input type="email" required></td>
+        </tr>
+
+        <tr>
+          <td><label>Age:</label></td>
+          <td><input type="number" step="5" required></td>
+        </tr>
+
+        <tr>
+          <td><label>Color:</label></td>
+          <td><input type="color"></td>
+        </tr>
+
+        <tr>
+          <td><label>Range:</label></td>
+          <td><input type="range"></td>
+        </tr>
+
+        <tr>
+          <td><label>Password:</label></td>
+          <td><input type="password" placeholder="Fill in your new password" required></td>
+        </tr>
+
+        <tr>
+          <td><label>Date of Birth:</label></td>
+          <td><input type="date" required></td>
+        </tr>
+      </table>
+
+      <br>
+
+      <label>Gender:</label>
+      <br>
+      <label>Male</label>
+      <input type="radio" name="chooseOne">
+      <label>Female</label>
+      <input type="radio" name="chooseOne">
+
+      <br>
+      <br>
+
+      <label>Your favorite loot:</label>
+      <br>
+      <select>
+        <option disabled selected value="">Select One</option>
+        <option>money</option>
+        <option>gold</option>
+        <option>ships</option>
+        <option>fruit</option>
+        <option>pikachu</option>
+        <option>turtle</option>
+        <option>lion</option>
+        <option>toothless</option>
+      </select>
+
+      <br>
+      <br>
+
+      <label>Nationality:</label>
+      <br>
+      <input type="text" list="countries" placeholder="Select a Country" autocomplete="off-please">
+      <datalist id="countries">
+        <option>Malaysia</option>
+        <option>Thailand</option>
+        <option>Taiwan</option>
+        <option>Australia</option>
+      </datalist>
+
+      <br><br>
+
+      <input type="file">
+
+      <br>
+      <br>
+
+      <label>I have verified that all my particulars are correct before clicking on submit:</label>
+      <input type="checkbox">
+
+      <br>
+      <br>
+
+      <input type="submit">
+
+    </fieldset>
+  </form>
+</body>
+</html>

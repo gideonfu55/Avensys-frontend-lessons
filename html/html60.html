@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Activity 60 - Grid 8</title>
+
+  <style>
+    .container {
+      background-color: white;
+      display: flex;
+      flex-wrap: wrap;
+      border: 7px maroon solid;
+    }
+
+    .item {
+      padding: 5px;
+      font-size: 35px;
+      text-align: center;
+      width: 200px;
+      height: 55px;
+    }
+
+    .break {
+      flex-basis: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item item1" style="background-color: red; order: 5;">1</div>
+    <div class="item item2" style="background-color: green; width: 500px; order: 6">2</div>
+    <div class="item item3" style="background-color: orange; order: 7">3</div>
+    <div class="break" style="order: 4"></div>
+    <div class="item item4" style="background-color: yellow; order: 1">4</div>
+    <div class="item item5" style="background-color: lightblue; order: 2">5</div>
+    <div class="item item6" style="background-color: gold; order: 3">6</div>
+  </div>
+</body>
+</html>

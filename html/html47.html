@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Activity 47 - Hover Property</title>
+
+  <style>
+    .outside {
+      display: flex;
+      flex-direction: column;
+      height: 70vh;
+    }
+
+    div {
+      /* display: flex; */
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      background-color: rgb(50, 189, 236);
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .box {
+      display: flex;
+      justify-content: left;
+      width: 700px;
+      height: 25px;
+      margin-top: 25px;
+      background-color: rgb(16, 58, 196);
+      padding-left: 20px;
+    }
+
+    div:last-child {
+      background-color: salmon;
+    }
+
+    .box p {
+      font-size: 20px;
+      color: white;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="outside">
+    <div class="box"><p>child-1</p></div>
+    <div class="box"><p>child-2</p></div>
+    <div class="box"><p>child-3</p></div>
+    <div class="box"><p>child-4</p></div>
+  </div>
+</body>
+</html>
