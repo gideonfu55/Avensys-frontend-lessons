@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Activity 56 - Form B</title>
+
+  <style>
+    body {
+      background-color: darkviolet;
+      color: white;
+    }
+
+    .topT {
+      border-spacing: 20px;
+    }
+
+    .column1 {
+      width: 170px;
+    }
+
+    span {
+      padding-left: 35px;
+    }
+
+    .bottomT {
+      position: relative;
+      bottom: 30px;
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <fieldset>
+      <legend>Enrollment Form</legend>
+      <table class="topT">
+        <tr>
+          <td class="column1"><label>FIRST NAME</label></td>
+          <td><input type="text" required>  (max 30 characters a-z and A-Z)</td>
+          <p></p>
+        </tr>
+
+        <tr>
+          <td class="column1"><label>LAST NAME</label></td>
+          <td><input type="text" required>  (max 30 characters a-z and A-Z)</td>
+        </tr>
+
+        <tr>
+          <td class="column1"><label>DATE OF BIRTH</label></td>
+          <td>
+            <select id="day">
+              <option disabled selected value="">Day:</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+            </select>
+            <select id="month">
+              <option disabled selected value="">Month</option>
+              <option>Jan</option>
+              <option>Feb</option>
+              <option>Mar</option>
+              <option>Apr</option>
+              <option>May</option>
+              <option>Jun</option>
+              <option>July</option>
+              <option>Aug</option>
+              <option>Sep</option>
+              <option>Oct</option>
+              <option>Nov</option>
+              <option>Dec</option>
+            </select>
+            <select id="year">
+              <option disabled selected value="">Year:</option>
+              <option>1980</option>
+              <option>1981</option>
+              <option>1982</option>
+              <option>1983</option>
+              <option>1984</option>
+              <option>1985</option>
+              <option>1986</option>
+              <option>1987</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="column1"><label>EMAIL ID</label></td>
+          <td><input type="email" required></td>
+        </tr>
+
+        <tr>
+          <td class="column1"><label>MOBILE NUMBER</label></td>
+          <td><input type="number" required></td>
+        </tr>
+
+        <tr>
+          <td><label>GENDER</label></td>
+          <td>
+            <label>Male</label>
+            <input type="radio" name="chooseOne">
+            <label>Female</label>
+            <input type="radio" name="chooseOne">
+          </td>
+        </tr>
+
+        <tr class="column1">
+          <td><label>ADDRESS</label></td>
+          <td><textarea style="width: 300px; height: 100px;"></textarea></td>
+        </tr>
+
+        <tr class="column1">
+          <td><label>CITY</label></td>
+          <td><input type="text" required>  (max 30 characters a-z and A-Z)</td>
+        </tr>
+
+        <tr>
+          <td class="column1"><label>PIN CODE</label></td>
+          <td><input type="number" required>  (6-digit number)</td>
+        </tr>
+
+        <tr class="column1">
+          <td><label>STATE</label></td>
+          <td><input type="text" required>  (max 30 characters a-z and A-Z)</td>
+        </tr>
+
+        <tr class="column1">
+          <td><label>COUNTRY</label></td>
+          <td>
+            <select>
+              <option disabled selected value="">Select your country:</option>
+              <option>Singapore</option>
+              <option>Malaysia</option>
+              <option>Thailand</option>
+              <option>Indonesia</option>
+              <option>India</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr class="column1">
+          <td><label>HOBBIES</label></td>
+          <td>
+            <span>Drawing</span>
+            <input type="checkbox">
+            <span>Singing</span>
+            <input type="checkbox">
+            <span>Dancing</span>
+            <input type="checkbox">
+            <span>Exercising</span>
+            <input type="checkbox">
+            <span>Others</span>
+            <input type="checkbox">
+            <input type="text">
+          </td>
+        </tr>
+      </table>
+
+      <table class="bottomT">
+        <tr>
+          <td class="column1" style="padding-top: 15px;"><label>QUALIFICATION</label></td>
+          <td><label>SI.No.Examination</label></td>
+          <td><label>Board</label></td>
+          <td><label>Percentage</label></td>
+          <td><label>Year of Passing</label></td>
+        </tr>
+        <tr>
+          <td class="column1"></td>
+          <td><label>1. </label><span>Class XI</span></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td class="column1"></td>
+          <td><label>2. </label><span>Class XII</span></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td class="column1"></td>
+          <td><label>3. </label><span>Graduation</span></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td class="column1"></td>
+          <td><label>4. </label><span>Masters</span></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+        </tr>
+        <tr>
+          <td class="column1"></td>
+          <td></td>
+          <td>(10 char max)</td>
+          <td>(up to 2 decimal)</td>
+          <td></td>
+        </tr>
+
+        <br>
+        <br>
+
+        <tr>
+          <td class="column1"><label>COURSES APPLIED FOR</label></td>
+          <td>
+            <label>BCA</label>
+            <input type="radio" name="chooseOne">
+            <label>B.Com</label>
+            <input type="radio" name="chooseOne">
+            <label>B.Sc</label>
+            <input type="radio" name="chooseOne">
+            <label>B.A</label>
+            <input type="radio" name="chooseOne">
+          </td>
+        </tr>
+      </table>
+
+      <label style="margin-left: 20px;">I have verified that all my particulars are correct before clicking on submit:</label>
+      <input type="checkbox">
+
+      <br><br>
+      <center>
+        <input type="submit">
+        <input type="reset">
+      </center>
+
+    </fieldset>
+  </form>
+</body>
+</html>
