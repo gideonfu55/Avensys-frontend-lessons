@@ -6,11 +6,11 @@
 
 ## DOM Exercises
 
-1. Exercise 1 - Event Capturing Order:
+1. Event Capturing Order:
 ![dom1a](https://github.com/gideonfu55/Avensys-html-exercises/assets/94817218/2cbb0e15-bb57-4429-aeed-72313394550e)
 
-2. Exercise 2 - Stop Propagation:
+1. Stop Propagation:
 ![dom2](https://github.com/gideonfu55/Avensys-html-exercises/assets/94817218/d544af4e-3cc9-4875-bd17-3b0e636acc72)
 
-3. Exercise 3 - Event Listening:
+1. Event Listening:
 ![dom3](https://github.com/gideonfu55/Avensys-html-exercises/assets/94817218/b07f4f32-6759-425e-a785-2af82dab8910)
