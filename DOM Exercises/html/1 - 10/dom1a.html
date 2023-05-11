@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DOM Exercise 1a - Event Propagation</title>
+
+  <style>
+    .eventBubDiv1 {
+      border: solid;
+      background-color: orange;
+      width: 420px;
+      height: 230px;
+      padding: 40px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Event Propagation Exercise: 3 Layered Divs -->
+  <div class="eventBubDiv1" style="background-color: yellow;">
+    1
+    <div class="eventBubDiv2" style="background-color: green; padding: 40px; border: solid";>
+      2
+      <div class="eventBubDiv3" style="background-color: orange; padding: 40px; border: solid">
+        3
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // In order of alerts: 1, 2, 3 - when div 3 is clicked:
+    const eventBubDiv1 = document.querySelector('.eventBubDiv1')
+    const eventBubDiv2 = document.querySelector('.eventBubDiv2')
+    const eventBubDiv3 = document.querySelector('.eventBubDiv3')
+
+    eventBubDiv1.addEventListener('click', () => {
+      alert('you clicked the inner element 1.')
+    }, true)
+
+    eventBubDiv2.addEventListener('click', () => {
+      alert('you clicked the middle element 2.')
+    }, true)
+
+    eventBubDiv3.addEventListener('click', () => {
+      alert('you clicked the outer element 3.')
+    }, true)
+  </script>
+</body>
+</html>
