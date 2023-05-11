@@ -1,6 +1,8 @@
 # Avensys-html-exercises
 
-HTML Assignments
+## HTML Assignments
+
+- HTML Exercises images can be viewed from: [HTML and Bootstrap Exercises/images](https://github.com/gideonfu55/Avensys-html-exercises/tree/master/HTML%20and%20Bootstrap%20Exercises/images)
 
 ## DOM Exercises
 
