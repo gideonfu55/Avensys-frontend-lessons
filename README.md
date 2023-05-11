@@ -7,7 +7,7 @@
 ## DOM Exercises
 
 1. Event Capturing Order:
-  ![dom1a](https://github.com/gideonfu55/Avensys-html-exercises/assets/94817218/2cbb0e15-bb57-4429-aeed-72313394550e)
+  <!-- ![dom1a](https://github.com/gideonfu55/Avensys-html-exercises/assets/94817218/2cbb0e15-bb57-4429-aeed-72313394550e) -->
   ![dom1b](https://github.com/gideonfu55/Avensys-html-exercises/assets/94817218/2ee0257f-243e-4b6c-8729-c12e0a82631e)
 
 2. Stop Propagation:
