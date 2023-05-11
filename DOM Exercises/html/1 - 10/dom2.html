@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DOM Exercise 2 - Stop Event Propagation</title>
+
+  <style>
+    .eventBubDiv1 {
+      border: solid;
+      background-color: orange;
+      width: 420px;
+      height: 230px;
+      padding: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Event Propagation Exercise: 3 Layered Divs -->
+  <div class="eventBubDiv1" style="background-color: yellow;">
+    1
+    <div class="eventBubDiv2" style="background-color: green; padding: 40px; border: solid";>
+      2
+      <div class="eventBubDiv3" style="background-color: orange; padding: 40px; border: solid">
+        3
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // - To stop the outer divs from changing color when the inner divs are clicked, you can use the stopPropagation() method on the event object. This will prevent the event from bubbling up to the parent elements.
+    const eventBubDiv1 = document.querySelector('.eventBubDiv1')
+    const eventBubDiv2 = document.querySelector('.eventBubDiv2')
+    const eventBubDiv3 = document.querySelector('.eventBubDiv3')
+
+    eventBubDiv3.addEventListener('click', event => {
+      event.stopPropagation()
+      eventBubDiv3.style.backgroundColor = 'red'
+    })
+
+    eventBubDiv2.addEventListener('click', event => {
+      event.stopPropagation()
+      eventBubDiv2.style.backgroundColor = 'blue'
+    })
+
+    eventBubDiv1.addEventListener('click', event => {
+      event.stopPropagation()
+      eventBubDiv1.style.backgroundColor = 'orange'
+    })
+  </script>
+</body>
+</html>
