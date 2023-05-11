@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DOM Exercise 3 - Event Listeners</title>
+
+  <style>
+    .boxArrange {
+      width: 100px; 
+      height: 100px;
+      border: solid;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="exercise" style="border: solid; height: 400px">
+    <div class="boxArrange" style="background-color: green;">
+    </div>
+
+    <div class="boxArrange" style="background-color: blue;">
+    </div>
+
+    <div class="boxArrange" style="background-color: orange;">
+    </div>
+  </div>
+
+  <div style="margin-top: 10px;">
+    <button id="btnFlex">Button 1: Flex</button>
+    <button id="btnFlex2">Button 2: Flex-end top</button>
+    <button id="btnFlex3">Button 3: Flex-end bottom</button>
+  </div>
+
+  <script>
+    // Adding event listener to make it a Tetris block 🙂:
+    const flexContainer = document.querySelector('.exercise')
+    const buttonFlex = document.querySelectorAll('button')
+
+    buttonFlex[0].addEventListener('click', () => {
+      flexContainer.style.display = 'flex'
+    })
+
+    buttonFlex[1].addEventListener('click', () => {
+      flexContainer.style.display = 'flex'
+      flexContainer.style.justifyContent = 'flex-end'
+    })
+
+    buttonFlex[2].addEventListener('click', () => {
+      flexContainer.style.display = 'flex'
+      flexContainer.style.justifyContent = 'flex-end'
+      flexContainer.style.alignItems = 'flex-end'
+    })
+  </script>
+</body>
+</html>
