@@ -7,10 +7,10 @@
 ## DOM Exercises
 
 1. Event Capturing Order:
-    - ![dom1a](https://github.com/gideonfu55/Avensys-frontend-exercises/assets/94817218/9f2721f8-dbe5-4b18-8e26-cf7abbec4fcd)
-    - ![dom1b](https://github.com/gideonfu55/Avensys-html-exercises/assets/94817218/2ee0257f-243e-4b6c-8729-c12e0a82631e)
-    - ![dom1c](https://github.com/gideonfu55/Avensys-frontend-exercises/assets/94817218/e09a149d-85f7-4dee-903e-0c72ad14fa9e)
-    - ![dom1d](https://github.com/gideonfu55/Avensys-frontend-exercises/assets/94817218/651152b8-6e89-4a40-b09f-bcd76f8ec9c2)
+    ![dom1a](https://github.com/gideonfu55/Avensys-frontend-exercises/assets/94817218/9f2721f8-dbe5-4b18-8e26-cf7abbec4fcd)
+    ![dom1b](https://github.com/gideonfu55/Avensys-html-exercises/assets/94817218/2ee0257f-243e-4b6c-8729-c12e0a82631e)
+    ![dom1c](https://github.com/gideonfu55/Avensys-frontend-exercises/assets/94817218/e09a149d-85f7-4dee-903e-0c72ad14fa9e)
+    ![dom1d](https://github.com/gideonfu55/Avensys-frontend-exercises/assets/94817218/651152b8-6e89-4a40-b09f-bcd76f8ec9c2)
 
 2. Stop Propagation:
   ![dom2](https://github.com/gideonfu55/Avensys-html-exercises/assets/94817218/4aaa932e-e98c-4f96-aab0-1860a8ad2a27)
