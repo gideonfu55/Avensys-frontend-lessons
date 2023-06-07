@@ -21,7 +21,7 @@ function Second() {
   // Using useEffect to auto render the output:
   useEffect(() => {
     dispatch(fetchProducts());
-  }, [dispatch]);
+  });
 
   return (
     <div>
