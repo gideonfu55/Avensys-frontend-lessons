@@ -22,7 +22,7 @@ function MyChart() {
 
   return (
     <div>
-      <h1>MyChart</h1>
+      <h5>MyChart</h5>
       <div style={{width: 500, height: 500}}>
         <Bar data={chartData} />
         <Scatter data={chartData} />
