@@ -1,0 +1,81 @@
+<p style="margin-left: 15px;">Reactive Form works!</p>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" style="margin-left: 15px;">
+
+  <div>
+    <label>Name:</label>
+    <input type="name" formControlName="name">
+    <!-- Error validation message -->
+    <span *ngIf="myForm.controls['name'].errors && myForm.controls['name'].touched" style="color: red;">
+      <span *ngIf="myForm.controls['name'].errors['required']">Name is required.</span>
+    </span>
+    <!-- End: Error validation message -->
+  </div>
+
+  <br>
+  <div>
+    <label>Email:</label>
+    <input type="email" formControlName="email">
+    <!-- Error validation message -->
+    <span *ngIf="myForm.controls['email'].errors && myForm.controls['email'].touched" style="color: red;">
+      <span *ngIf="myForm.controls['email'].errors['required']">Email is required.</span>
+      <span *ngIf="myForm.controls['email'].errors['email']">Invalid email address.</span>
+    </span>
+    <!-- End: Error validation message -->
+  </div>
+
+  <!-- <span style="color: red;" *ngIf="myForm.get('fn').hasError('maxlength') && myForm.get('fn').touched">
+    Should have a maximum of 50 characters
+  </span> -->
+
+  <br>
+  <div>
+    <label>Age:</label>
+    <input type="number" formControlName="age">
+    <!-- Error validation message -->
+    <span *ngIf="myForm.controls['age'].errors && myForm.controls['age'].touched" style="color: red;">
+      <span *ngIf="myForm.controls['age'].errors['min']">Age must be at least 18.</span>
+    </span>
+    <!-- End: Error validation message -->
+  </div>
+
+  <br>
+  <h4>Add user</h4>
+  <!-- <table> -->
+    <div formArrayName="users">
+      <div *ngFor="let user of usersArray.controls; let i = index" [formGroupName]="i"]>
+        <input type="text" formControlName="name">
+        <input type="text" formControlName="email">
+        <input type="text" formControlName="age">
+      </div>
+    </div>
+  <!-- </table> -->
+
+  <div *ngFor="let user of usersArray.controls; let i = index">
+    <p>{{ usersArray.controls[i].get('name')?.value }}</p>
+  </div>
+
+      <!-- <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td><input type="text" [(ngModel)]="myForm.value.name"></td>
+        <td><input type="text" [(ngModel)]="myForm.value.email"></td>
+        <td><input type="number" [(ngModel)]="myForm.value.age"></td>
+      </tr> -->
+
+  <br>
+  <button type="submit" [disabled]="myForm.invalid">Submit</button>
+  <br><br>
+  <button (click)="setValue()">Default Setting</button>
+  <br><br>
+  <button (click)="onReset()">Reset</button>
+  <br><br>
+  <button (click)="addUser()">Add User</button>
+</form>
+
+<br>
+
+

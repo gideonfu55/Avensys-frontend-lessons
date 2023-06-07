@@ -1,0 +1,27 @@
+<p>form3 works!</p>
+
+<form [formGroup]="myForm" style="margin-left: 15px;">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Age</th>
+        <th>Eligibility</th>
+      </tr>
+    </thead>
+    <tbody formArrayName="users">
+      <tr *ngFor="let user of usersArray.controls; let i = index"
+      [formGroupName]="i">
+        <td><input type = "text" formControlName="name"></td>
+        <td><input type = "email" formControlName="email"></td>
+        <td><input type = "number" formControlName="age"></td>
+        <td><input type = "text" formControlName="eligibility"></td>
+        <button (click)="removeElement(i)">REMOVE</button>
+        <button (click)="assign(i)">Reassign</button>
+      </tr>
+    </tbody>
+  </table>
+
+  <button (click)="addUser()">Add User</button>
+</form>

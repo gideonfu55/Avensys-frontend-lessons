@@ -1,0 +1,178 @@
+<div id="hero-detail">
+  <h1>This is my first created component!</h1>
+  <p>hero-detail works!</p>
+
+  <div id="directives-lesson" style="border: 5px blue solid;">
+    <h2><u>Angular Structural Directives</u></h2>
+    <h3>ngIf example:</h3>
+    <div *ngIf="message; else error_msg">
+      This has been displayed successfully.
+    </div>
+
+    <h3>ngIf-then example:</h3>
+    <div *ngIf="message; then success_msg; else error_msg">
+    </div>
+
+    <h3>ngSwitch example:</h3>
+    <div [ngSwitch]="option">
+      <div *ngSwitchCase="'Superman'">The power of Superman is super strength.</div>
+      <div *ngSwitchCase="'Batman'">The power of Batman is super wealth and brain.</div>
+      <div *ngSwitchCase="'The Flash'">The power of The Flash is super speed.</div>
+      <div *ngSwitchCase="'Wonderwoman'">The power of Wonder Woman is tenacity.</div>
+      <div *ngSwitchDefault>Default option</div>
+    </div>
+  </div>
+
+  <ng-template #success_msg>Your code is successful!</ng-template>
+  <ng-template #error_msg>Please check your code!</ng-template>
+
+
+  <h2>String interpolation:</h2>
+  <h2>{{print1}}</h2>
+
+  <div style="border: 5px solid green;">
+    <h3>How to use ngFor for looping through lists:</h3>
+    <!-- <div *ngFor="let contact of contacts">
+      <h3>{{contact.id}} {{contact.firstName}} {{contact.lastName}}</h3>
+    </div> -->
+    <h5>If you wish to include conditions:</h5>
+    <ol>
+      <ng-container *ngFor="let contact of contacts; index as i; first as f">
+        <li *ngIf="i > 1">
+          {{contact.id}} {{contact.firstName}} {{contact.lastName}}
+        </li>
+      </ng-container>
+    </ol>
+    <ul>
+      <ng-container *ngFor="let contact of contacts; index as i; first as f">
+        <li *ngIf="f">
+          {{contact.id}} {{contact.firstName}} {{contact.lastName}}
+        </li>
+      </ng-container>
+    </ul>
+    <ul>
+      <ng-container *ngFor="let contact of contacts; index as i; even as e; odd as o">
+        <li *ngIf="e" style="background-color: blue;">
+          {{contact.id}} {{contact.firstName}} {{contact.lastName}}
+        </li>
+        <li *ngIf="o" style="background-color: aquamarine;">
+          {{contact.id}} {{contact.firstName}} {{contact.lastName}}
+        </li>
+      </ng-container>
+    </ul>
+
+    <table>
+      <tr>
+        <th>Index</th>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+      </tr>
+      <ng-container *ngFor="let contact of contacts; index as i; even as e; odd as o">
+        <tr *ngIf="e" style="background-color: lightblue;">
+          <td>{{i + 1}}</td>
+          <td>{{contact.id}}</td>
+          <td>{{contact.firstName}}</td>
+          <td>{{contact.lastName}}</td>
+        </tr>
+        <tr *ngIf="o" style="background-color: aquamarine;">
+          <td>{{i + 1}}</td>
+          <td>{{contact.id}}</td>
+          <td>{{contact.firstName}}</td>
+          <td>{{contact.lastName}}</td>
+        </tr>
+      </ng-container>
+    </table>
+  </div>
+  <br>
+
+  <div [ngStyle]="{'border':'5px solid orange'}">
+    <h3>NgStyle Directive</h3>
+    <div [ngStyle]="{'color': g}">
+      This is the NgStyle directive with direct input.
+    </div>
+    <div [ngStyle]="{'color': r}">
+      This is the NgStyle directive with dynamic input.
+    </div>
+    <div [ngStyle]="{'background-color': color === 'red' ? 'red' : 'aquamarine' }">
+      This is the third block based on conditional ngStyle.
+    </div>
+  </div>
+
+  <div class="ngClass-section" style="border: 5px solid maroon; margin-top: 15px">
+    <h2 style="margin-bottom: 0;">NgClass Lesson:</h2>
+    <h3 [ngClass]="'a3 a4'">{{sentence}}</h3>
+    <h3 [ngClass]="class">This sentence has ngClass imports.</h3>
+    <h3 [ngClass]="class === 'a1 a2' ? 'a1 a2' : 'a1 a4'">This sentence has ngClass imports.</h3>
+  </div>
+
+  <div class="databinding-section" style="border: 5px solid navy; margin-top: 15px">
+    <div [innerHTML]="sentence"></div>
+    <h1 [title]="header">This is the heading</h1>
+  </div>
+
+  <div style="border: 5px solid blue; margin-top: 15px">
+    <h3>Attribute Data Binding:</h3>
+    <table class="attribute-binding-table">
+      <tr>
+        <th>Value</th>
+        <th>Value</th>
+        <th>Value</th>
+      </tr>
+      <tr>
+        <td>Value 1</td>
+        <td>Value 2</td>
+        <td>Value 3</td>
+      </tr>
+      <tr>
+        <td [attr.colspan]="val">Value 4</td>
+        <td>Value 6</td>
+      </tr>
+    </table>
+  </div>
+
+  <br>
+
+  <div style="border: 5px dashed gold;" class="eventhandling" >
+    <h3>Event Handling with Angular/TypeScript:</h3>
+    <button style="margin-left: 15px" (click)="hello()">
+      Click to say Hello!
+    </button>
+
+    <div style="width: 100px; height: 100px; border: 2px solid green; margin: 15px" (mouseover)="provideNumbersSum(2, 3 , 4)">
+      Hover mouse over to give a sum.
+    </div>
+
+    <div style="width: 100px; height: 100px; border: 2px solid green; margin: 15px" (mouseover)="provideString('Gideon', 'Fu', 300)">
+      Hover mouse over to give a string.
+    </div>
+  </div>
+
+  <div style="margin: 15px; border: 5px solid mediumseagreen">
+    <h3>This is a two-way data binding.</h3>
+    <input [(ngModel)]="superpower" style="margin-left: 15px;"><span>Currently in {{superpower}}</span>
+    <p [innerHTML]="superpower" style="margin: 15px"></p>
+  </div>
+
+  <div style="margin: 15px; padding: 5px; border: 5px solid goldenrod">
+    <h3 style="font-weight: bold;">Importing Material Angular Components:</h3>
+
+    <button mat-raised-button color="primary" style="margin: 15px;">Primary</button>
+
+    <mat-button-toggle value="bold" style="margin: 15px;">Bold</mat-button-toggle>
+
+    <mat-card style="width: 500px;">
+      <mat-card-content>Simple card</mat-card-content>
+    </mat-card>
+  </div>
+
+  <div style="margin: 15px; padding: 5px; border: 5px solid palevioletred">
+    <h2>Angular Pipes</h2>
+    <h3>{{ upperCase | lowercase }}<span> - lowercase pipe</span></h3>
+    <h3>{{ lowerCase | uppercase }}<span> - uppercase pipe</span></h3>
+    <h3>{{ date_current | date: 'dd-MMM-YYYY' }}<span> - date pipe: can be used to format the date as well</span></h3>
+    <h3>{{ object1 | json | uppercase }}<span> - json pipe</span></h3>
+    <h3>{{ num_value | currency: 'USD' }}<span> - currency pipe</span></h3>
+    <h3>{{ num_value2 | percent:'.2' }}<span> - percentage pipe</span></h3>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<form style="margin-left: 15px;" #addForm="ngForm" (ngSubmit)="getForm(addForm)">
+  <br>
+  <label>First Name:</label>
+  <br>
+  <input type="text" [(ngModel)]="firstname" name="firstname" required maxlength="50">
+  <br><br>
+  <label>Description:</label>
+  <br>
+  <textarea [(ngModel)]="description" name="description" required minlength="10" maxlength="100"></textarea>
+  <br><br>
+  <label>Select One:</label>
+  <select name="selectBox" [(ngModel)]="selectBox" style="margin-left: 5px;" required>
+    <option value="1">Option 1</option>
+    <option value="2">Option 2</option>
+    <option value="3">Option 3</option>
+  </select>
+  <br><br>
+  <input type="checkbox" [(ngModel)]="checked" name="checked" required><span>Agree for terms and conditions</span>
+  <br><br>
+  <button type="submit" [disabled]="!addForm.valid">Submit</button>
+  <button (click)="resetForm(addForm)" style="margin-left: 5px;">Reset</button>
+  <br><br>
+  <button (click)="setValue(addForm)">Default Setting</button>
+</form>
