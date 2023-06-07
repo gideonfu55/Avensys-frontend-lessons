@@ -15,7 +15,6 @@ export const fetchProducts = () => {
   return (dispatch) => {
     get('https://fakestoreapi.com/products')
       .then((response) => {
-        console.log(response.data)
         dispatch(fetchProductsSuccess(response.data));
       })
       .catch((error) => {
@@ -43,18 +42,16 @@ const productsReducer = (state = initialProducts, action) => {
     switch (action.type) {
       case 'FETCH_PRODUCTS_SUCCESS':
         return {
-          ...state,
-          products: action.payload,
+          products: [...action.payload],
           loading: false,
           error: null
         };
       case 'FETCH_PRODUCTS_FAILURE':
         return {
-          ...state,
           products: [],
           loading: false,
           error: action.payload,
-           // Set loading state to false after failed request
+          // Set loading state to false after failed request and get error as payload
         };
       default:
         return state;
