@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable no-undef */
 import React, { useEffect, useState } from 'react'
 import get from "axios"
@@ -6,7 +7,7 @@ function WeatherWidget() {
 
   // Declare required useState for weatherData:
   const [ weatherData, setWeatherData] = useState('')
-  const apiKey = '9abf32659a2f499c80195207230606'
+  const apiKey = process.env.REACT_APP_API_KEY
   const city = 'Singapore'
 
   // Function to fetch Weather Data from WeatherAPI:
