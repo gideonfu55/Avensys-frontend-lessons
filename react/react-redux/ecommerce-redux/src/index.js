@@ -8,7 +8,7 @@ import Third from "./Third";
 function App() {
   return (
     <div>
-      <h5 className="m-3 fw-bold">Welcome to Ecommerce App</h5>
+      <h5 className="m-3 fw-bold">Welcome to Ecommerce Redux App</h5>
       <div className="d-flex">
         <First/>
         <Second/>
