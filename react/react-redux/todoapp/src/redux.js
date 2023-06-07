@@ -1,6 +1,4 @@
-import get from 'axios'
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import { createStore, combineReducers } from 'redux';
 
 // Create State - Your initial data in the todolist:
 const initialData = {
@@ -32,4 +30,4 @@ const rootReducer = combineReducers({
 })
 
 // Create a Redux Store:
-export const todoStore = createStore(rootReducer, applyMiddleware(thunk))
+export const todoStore = createStore(rootReducer)
