@@ -18,6 +18,8 @@
 3. Event Listening:
   ![dom3](https://github.com/gideonfu55/Avensys-html-exercises/assets/94817218/edbdea00-44be-4435-8623-434329e498ae)
 
+## JavaScript
+
 ## Angular
 
 ## React
