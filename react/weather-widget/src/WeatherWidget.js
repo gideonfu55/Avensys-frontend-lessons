@@ -3,12 +3,11 @@
 import React, { useEffect, useState } from 'react'
 import get from "axios"
 
-function WeatherWidget() {
+function WeatherWidget({ city }) {
 
   // Declare required useState for weatherData:
   const [ weatherData, setWeatherData] = useState('')
   const apiKey = process.env.REACT_APP_API_KEY
-  const city = 'Singapore'
 
   // Function to fetch Weather Data from WeatherAPI:
   const fetchWeatherData = async() => {
@@ -48,7 +47,7 @@ function WeatherWidget() {
   // Return actual HTML for response:
   return (
 
-    <div className='card border border-info border-3 p-3 m-5' style={{ width: "18rem" }}>
+    <div className='card border border-info border-3 p-3 m-3' style={{ width: "18rem" }}>
       <div className='card-body'>
         <h3 className='fw-bold mb-4'>Weather Information</h3>
         <p>City: {weatherData.location.name}</p>

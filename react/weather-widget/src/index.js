@@ -4,8 +4,11 @@ import WeatherWidget from "./WeatherWidget";
 function App() {
 
   return (
-    <div className="mt-2">
-      <WeatherWidget/>
+    <div className="mt-2 d-flex">
+      <WeatherWidget city="Singapore"/>
+      <WeatherWidget city="London"/>
+      <WeatherWidget city="New York"/>
+      <WeatherWidget city="Israel"/>
     </div>
   );
 }
