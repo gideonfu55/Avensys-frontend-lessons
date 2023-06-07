@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Set-Timeout & Set-Time</title>
+
+  <style>
+    .abcd, .bowser {
+      font-size: 25px;
+      font-weight: bold;
+      height: 70vh;
+      background-repeat: no-repeat;
+    }
+
+    .abcd {
+      /* background-color: red; */
+      background-image: url(../images/mario.png);
+    }
+
+    .bowser {
+      background-image: url(../images/bowser.png);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="abcd"></div>
+
+  <script>
+    // SetTimeout - Simple 'Login' function:
+    const password = 'mariolovespeach'
+    let p = prompt('Enter your password')
+    let abcd = document.querySelector('#abcd')
+
+    if (p === password) {
+      setInterval(() => {
+        abcd.innerHTML = 'You have logged in successfully!'
+        abcd.classList.add('abcd')
+      }, 2000);
+    } else {
+      // alert("You have entered a wrong password!")
+      abcd.innerHTML = 'You have given a wrong password.'
+      abcd.classList.add('bowser')
+    }
+
+    // SetInterval:
+    function loopNum () {
+      let x = 0;
+      while (x <= 10) {
+        alert(x)
+        x++
+      }
+    }
+
+    // setTimeout(loopNum, 1000);
+  </script>
+</body>
+</html>
+

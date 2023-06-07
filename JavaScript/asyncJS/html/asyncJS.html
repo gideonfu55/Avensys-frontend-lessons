@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Asynchronous JavaScript</title>
+</head>
+
+<body>
+
+  <script>
+    // Synchronous:
+    // let a = alert("This is first line.")
+    // let b = alert("This is second line.")
+    // let c = alert("This is third line.")
+    // document.write("This is the last line.")
+
+    // Asynchronous coding
+    alert('start')
+    setTimeout(() => {
+      alert("This is is the set timeout function, but it ends after 'end here'.")
+    }, 1000)
+    alert('end here')
+  </script>
+</body>
+</html>

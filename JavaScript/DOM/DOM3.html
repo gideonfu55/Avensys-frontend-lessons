@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Matches, Closes & Contain Methods + Data Attribute</title>
+</head>
+
+<body>
+  <div class="a" id="id1">This div has a class a.<span id="span1">This is a span, not spam.</span></div>
+  <div class="b" id="id2">This is element 1.<h5 id="header5">There is a h5 inside the div 2.</h5></div>
+  <div class="c" id="id3">This is element 2.</div>
+
+  <!-- Using data attribute values -->
+  <div class="d" id="id4" data-anime="livenote" data-anime2="twopiece"></div>
+
+  <p id="demo"></p>
+
+  <script>
+    let id1 = document.querySelector('#id1')
+    let id2 = document.querySelector('#id2')
+    // console.log(id1)
+    // console.log(id1.matches('.b'))
+    // console.log(id1.closest('.a'))
+    // console.log(id1.contains(id2))
+    // console.log(id1.contains(id1))
+    // console.log(id1.contains(span1))
+    // console.log(id1.contains(id2))
+    // console.log(id2.contains(id2))
+    // console.log(id2.contains(header5))
+
+    // function javascript() {
+    //   document.getElementById("demo").innerHTML = Math.abs(-7.25)
+    // }
+
+    // console.log(javascript())
+
+    let firstData = document.querySelector('.d')
+    console.log(firstData)
+    console.log(id4.dataset)
+    console.log(firstData.dataset.anime)
+    console.log(firstData.dataset.anime2)
+
+  </script>
+</body>
+</html>

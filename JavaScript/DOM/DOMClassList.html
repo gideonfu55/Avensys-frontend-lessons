@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ClassList, ClassName & ClassToggle</title>
+
+  <style>
+    .y {
+      background-color: yellow;
+    }
+
+    .r {
+      background-color: red;
+    }
+
+    .b {
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="span1" class="r"><span style="font-size: 25px;">Hello how are you?</span></div>
+
+  <button>Toggle</button>
+  
+  <script>
+    let a = document.querySelector('#span1')
+    console.log(a.className)
+    console.log(a.classList.value)
+    a.classList.remove('r')
+    a.classList.add('y')
+    
+    let button = document.querySelector('button')
+    button.addEventListener('click', () => {
+      a.classList.toggle('b')
+    })
+  </script>
+</body>
+</html>

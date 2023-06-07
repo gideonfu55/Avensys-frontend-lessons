@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Defining Objects</title>
+</head>
+
+<body>
+
+  <script>
+    let developer = {
+      name: 'Gideon',
+      language: 'javascript, java, html, css',
+      codeWebPage: language => {
+        console.log('Code a new webpage in ' + language)
+      }
+    };
+
+    // A prototype is an extension of an object if you would, like Terminator 2.0
+    let proto1 = {
+      run: () => {
+        console.log('type code')
+      },
+      run2: () => console.log('hello world!')
+    };
+
+    // Prototypes can also add on new functionality and attributes (like upgrades to a robot's armour) - e.g. so you have a Megazoid wearing an armour with new attack features.
+    proto1.__proto__ = {
+      role: "Senior Developer"
+    }
+
+    // You can add on the prototype to an object, together with its methods:
+    developer.__proto__ = proto1
+    console.log(developer)
+    developer.run()
+    developer.run2()
+
+    console.log(developer.role)
+  </script>
+</body>
+</html>

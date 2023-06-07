@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Async & Await</title>
+</head>
+
+<body>
+  
+
+  <script>
+    async function h() {
+      let country1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(console.log("Displaying the climate for country 1: 28 degree celsius"))
+        }, 4000)
+      })
+
+      let country2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(console.log("Displaying the climate for country 2: 35 degree celsius"))
+        }, 2000)
+      })
+
+      let c1 = await country1
+      // console.log("Country 1 climate displayed: " + c1)
+
+      
+      let c2 = await country2
+      // console.log("Country 2 climate displayed: " + c2)
+
+      return [c1,c2]
+    }
+
+    console.log("Report of the climate")
+    h()
+
+    let a = h()
+    console.log(a);
+  </script>
+</body>
+</html>

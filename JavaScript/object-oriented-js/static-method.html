@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Static Methods</title>
+</head>
+
+<body>
+
+  <script>
+    class Animal {
+      constructor(name) {
+        this.name = Animal.capitalize(name)
+      }
+
+      walk() {
+        console.log('Animal ' + this.name + ' is walking.')
+      }
+
+      // Using static mean that the method can only be accessed by using the Class as the object key itself, not the class instantiation.
+      static capitalize(name) {
+        return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
+      }
+      
+    }
+
+    let animal1 = new Animal('piPI')
+    animal1.walk()
+  </script>
+</body>
+</html>

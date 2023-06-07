@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Promise Chaining</title>
+</head>
+
+<body>
+
+  <script>
+    let p1 = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        console.log('Resolved after 2s.')
+        resolve(100)
+      }, 2000)
+    });
+
+    p1.then(result => {
+      console.log(result)
+      let p2 = new Promise((resolve, reject) => {
+        resolve('promise')
+        // reject('rejected')
+      })
+      return p2;
+    }).then(result2 => {
+      console.log('We have completed the promises.')
+    }).then(value => {
+      console.log('Really a last line.')
+    })
+  </script>
+</body>
+</html>

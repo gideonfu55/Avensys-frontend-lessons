@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Browser Events</title>
+</head>
+
+<body>
+  <div id="container">
+    <button onclick="alert('hello')"; x="10"; console.log(x)>click on</button>
+  </div>
+
+  <br>
+  <button id="btn">Click on me</button>
+
+  <script>
+    // Changing the from a nested node:
+    let a = document.querySelector('#container')
+    a.onclick = () => {
+      let b = document.querySelector('#container')
+      b.innerHTML = "<h2>Replaced by text</h2>"
+    }
+
+    let x = e => {
+      console.log("I'm the first function")
+      console.log(event.type)
+    }
+    let btn = document.querySelector('#btn')
+    btn.addEventListener('click', x)
+    btn.addEventListener('click', () => {
+      console.log("I'm the second function")
+    })
+    let c = prompt('Enter number')
+
+    // Note that removeEventListener doesn't work if you don't specify a specific function from before.
+    if (c === '2') {
+      btn.removeEventListener('click', x)
+    }
+  </script>
+</body>
+</html>

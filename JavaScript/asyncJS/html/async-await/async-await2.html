@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    async function h() {
+      let country1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log("Displaying the climate for country 1:");
+          console.log("28 degree celsius")
+          console.log("Country 1 climate displayed");
+          resolve();
+        }, 2000);
+      });
+
+      let country2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log("Displaying the climate for country 2:")
+          console.log("35 degree celsius");
+          console.log("Country 2 climate displayed");
+          resolve();
+        }, 4000);
+      });
+
+      await country1;
+      await country2;
+
+      // return "Promise resolved";
+    }
+
+    console.log("Report of the climate:");
+    h();
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>OOP - Inheritance</title>
+</head>
+
+<body>
+  <script>
+    class Animal {
+      constructor(name, color) {
+        this.name = name
+        this.color = color
+      }
+
+      run() {
+        console.log(this.name + ' is running in the jungle.')
+      }
+
+      shop() {
+        console.log(this.name + ' is shopping in the jungle 😂')
+      }
+    }
+
+    class Monkey extends Animal {
+      // Other than the methods of the parent Animal, Monkey can have its own methods too:
+      eatBanana() {
+        console.log(this.name + ' is eating a 🍌')
+      }
+    }
+
+    let a = new Animal('Kiki', 'White')
+    let b = new Monkey('Neo', 'Orange')
+
+    a.run()
+    a.shop()
+    // a.eatBanana() // => this throws an error. A parent cannot receive the unique methods of the child class.
+    b.run() // all the properties/methods of Animal is inherited by Monkey
+    b.shop()
+    b.eatBanana()
+  </script>
+</body>
+</html>

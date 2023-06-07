@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Error Handling Using Try-Catch</title>
+</head>
+<body>
+  <script>
+    try {
+      throw new SyntaxError("This is my error.")
+    } catch (error) {
+      console.log(error.name)
+      console.log(error.message)
+      console.log(error.stack)
+    }
+    
+    let ageInput = prompt("What is your age?")
+
+    function checkAge(age) {
+      try {
+        if (age > 100) {
+          throw new ReferenceError("Your age is over the limit.")
+        } 
+        console.log('You are registered.')
+      } catch (error) {
+        console.log(error.message)
+      }
+    }
+
+    // checkAge(ageInput)
+
+    // try {
+    //   let age = prompt("What is your age?")
+    //   if (age > 100) {
+    //     throw new ReferenceError("Your age is over the limit.")
+    //   }
+    // } catch (error) {
+    //   console.log(error.message)
+    // }
+
+    // Finally
+    // - We use finally because it will be executed even if there is a problem within the catch block itself.100
+    
+    try {
+      let b = 100
+      throw new SyntaxError('This is a wrong syntax.')
+      return
+    } catch (e) {
+      console.log(e.message)
+      console.log(abcd)
+    } finally {
+      console.log('Please review your input.')
+    }
+
+    console.log('Finally statement.')
+  </script>
+</body>
+</html>

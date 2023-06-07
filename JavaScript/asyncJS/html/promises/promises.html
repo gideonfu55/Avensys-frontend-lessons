@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Promises</title>
+
+</head>
+
+<body>
+  
+
+  <script>
+    // 1. Setting up promises with setTimeout:
+    let promise = new Promise((resolve, reject) => {
+      console.log('Alert from the Promise 1 block.')
+      setTimeout(() => {
+        console.log('Executed after 3s: Promise 1.')
+        resolve('resolved with set timeout')
+      }, 3000)
+    })
+
+    let promise2 = new Promise((resolve, reject) => {
+      console.log('Alert from the Promise 2 block.')
+      setTimeout(() => {
+        console.log('Executed after 3s: Promise 2.')
+        reject(new Error('This is an error.'))
+      }, 3000)
+    })
+
+    // 2. Getting the results of promises:
+    promise.then(result => {
+      console.log('Promise 1 resolved: ', result)
+    }).catch(error => {
+      console.log('Promise 1 rejected: ', error)
+    })
+
+    promise2.then(result => {
+      console.log('Promise 2 resolved: ', result)
+    }).catch(error => {
+      console.log('Promise 2 rejected: ', error)
+    })
+
+    console.log(promise);
+    console.log(promise2)
+  </script>
+</body>
+</html>

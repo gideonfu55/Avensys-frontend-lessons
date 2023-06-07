@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DOM Lessons</title>
+
+  <style>
+    .eventBubDiv1 {
+      border: solid;
+      background-color: orange;
+      width: 450px;
+      height: 300px;
+      padding: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>JavaScript DOM Ahoy!</h1>
+ 
+  <div id="div1" class="d1">
+    <h1 id="head1" class="d1">This is a new header.</h1>
+    <p id="para1">This is paragraph 1.</p>
+    <p id="para2" class="d1">This is paragraph 2.</p>
+    <p>This is paragraph 3.</p>
+
+    <img src="./images/fK5ssgvtI43z19FoWigdlqgpLRE.jpg" style="height: 180px; width: 250px" alt="">
+  </div>
+
+  <div id="create">
+    <!-- newDiv2 inserted here: -->
+    <!-- <div id="newDiv2"></div> -->
+    <h1 id="h1-first">Heading 1</h1>
+    <h2>Heading 2</h2>
+
+    <div class="swap" style="width: 150px; height:150px; background-color:red"></div>
+  </div>
+
+  <br>
+  <button>Subscription</button>
+  <br><br>
+
+  <button id="newBtn">Try Event Listener</button>
+  <div style="width: 25px; height:25px; background-color: orange;">
+    <h3 style="text-align: center;" id="demo" style="font-size: 25px;"></h3>
+  </div>
+
+  <h2>Event Bubbling</h2>
+  <div id="outer" style="background-color: yellow; padding: 40px">
+    <h2 style="background-color: orange; padding: 40px">Bubbling</h2>
+    <div style="background-color: green; padding: 40px" id="inner">Click</div>
+  </div>
+
+  <br>
+  <!-- Event Propagation Exercise: 3 Boxed in Divs -->
+  <div class="eventBubDiv1" style="background-color: yellow;">
+    1
+    <div class="eventBubDiv2" style="background-color: green; width: 350px; height: 200px; padding: 40px; border: solid";>
+      2
+      <div class="eventBubDiv3" style="background-color: orange; width: 250px; height: 100px; padding: 40px; border: solid">
+        3
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="exercise" style="border: solid; height: 400px">
+    <div class="boxArrange" style="width: 70px; height:70px; background-color: green; border: solid">
+    </div>
+
+    <div class="boxArrange" style="width: 70px; height:70px; background-color: blue; border: solid">
+    </div>
+
+    <div class="boxArrange" style="width: 70px; height:70px; background-color: orange; border: solid">
+    </div>
+  </div>
+
+  <button id="btnFlex">Button 1: Flex</button>
+  <button id="btnFlex2">Button 2: Flex-end top</button>
+  <button id="btnFlex3">Button 3: Flex-end bottom</button>
+
+  <!-- Scripts -->
+  <!-- <script src="./js/lessons/9.DOM.js"></script> -->
+  <script>
+    
+  </script>
+</body>
+</html>

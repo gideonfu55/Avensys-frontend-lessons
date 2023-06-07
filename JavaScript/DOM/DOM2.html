@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DOM - Child Node</title>
+</head>
+
+<body>
+  <div class="a">
+    <div class="b">
+      <h1>This is a child of div B.</h1>
+    </div>
+    <!-- This space can be a node when childNode is accessed, UNLESS </div> and <h1> is side by side -->
+    <h1 id="h">The heading</h1>
+    <h3>Heading using h3</h3>
+  </div>
+  
+  <!-- This is a comment -->
+  <script>
+    let nodeA = document.querySelectorAll('body')[0]
+    // console.log(nodeA.childNodes[0])
+    let b = Array.from(document.body.childNodes)
+    // console.log(b)
+    // console.log(b[0])
+    let c = document.getElementsByClassName('b')[0]
+    // console.log(c.parentNode)
+    // console.log(c.parentElement)
+    // console.log(c.firstElementChild)
+    // console.log(c.nextSibling)
+    // console.log(c.nextElementSibling)
+    let d = document.getElementById('h')
+    // console.log(d.previousSibling)
+    // console.log(d.previousElementSibling)
+    
+  </script>
+</body>
+</html>

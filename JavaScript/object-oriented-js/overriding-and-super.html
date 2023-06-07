@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Method Overriding and Super()</title>
+</head>
+
+<body>
+  
+  <script>
+    class Employee {
+      constructor(employeeName, employeeRole, employeeLeave) {
+        this.employeeName = employeeName
+        this.employeeRole = employeeRole
+        this.employeeLeave = employeeLeave
+      }
+
+      login() {
+        console.log(this.employeeName + ' logged in to the company employee portal. ✅')
+      }
+
+      logout() {
+        console.log(this.employeeName + ' logged out from the company employee portal. ❌')
+      }
+
+      requestAnnualLeave(leaveDays) {
+        console.log(this.employeeName + ' is given 1 off-in-liew due to Hari Raya.')
+        if (typeof leaveDays === "number" && leaveDays > 0 && leaveDays <= this.employeeLeave) {
+          console.log(this.employeeName + ' applied annual leave for ' + leaveDays + ' days.')
+        } else {
+          console.log("You entered a wrong input, or currently don't have enough leave days for this application.")
+        }
+        console.log(this.employeeName + ' has ' + (this.employeeLeave - leaveDays) + ' days of annual leave left.')
+      }
+    }
+
+    class Programmer extends Employee {
+      constructor(employeeName, employeeRole, employeeLeave, employeeComputer) {
+        super(employeeName, employeeRole, employeeLeave)
+        this.employeeComputer = employeeComputer
+        console.log(this.employeeName + ' was assigned a laptop: ' + this.employeeComputer + ' because of his programming role.\n\n')
+      }
+
+      requestCoffeeBreak(x) {
+        console.log(this.employeeName + ' wishes to go for another coffee break.' + ' Getting ' + x + ' cups from the pantry. ☕')
+      }
+
+      // This is overriding the method from the parent (but it means losing the whole method from the parent):
+      // Solution: super()
+      requestLeave(leaveDays) {
+        super.requestLeave(leaveDays)
+        console.log('1 extra off day was given due to the weekend programming work. 🈸')
+      }
+
+    }
+
+    let programmer1 = new Programmer('Gideon Fu', 'Associate Software Developer', 14, 'Lunar 14 Pro')
+    programmer1.login()
+    programmer1.requestAnnualLeave(5)
+    programmer1.logout()
+    programmer1.requestCoffeeBreak(10)
+  </script>
+</body>
+</html>

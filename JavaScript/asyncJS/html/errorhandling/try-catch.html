@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    setTimeout(() => {
+      console.log("Hacking the wifi.......process at 30% ")
+    });
+
+    // You cannot have a setTimeout within a try-catch block - it still gives an error:
+    // try {
+    //   setTimeout(() => {
+    //     console.log(abcd)
+    //   }, 2000)
+    // } catch (e) {
+    //   console.log(e)
+    // }
+
+    // This is the right way: to have a try-catch within the setTimeout instead - this will give a proper catch message.
+    setTimeout(() => {
+      try {
+        console.log(abcd)
+      } catch(e) {
+        console.log(e)
+      }
+    }, 2000)
+
+    setTimeout(() => {
+      console.log("Fetching the details.......process at 50%")
+    }, 1000);
+
+    setTimeout(() => {
+      console.log("Account user details retrieved.......process at 80%")
+    }, 2000);
+
+    setTimeout(() => {
+      console.log("Wifi hacked successfully. All details retrieved.")
+    }, 3000);
+  </script>
+</body>
+</html>

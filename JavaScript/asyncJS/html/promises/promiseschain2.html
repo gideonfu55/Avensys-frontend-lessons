@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Promises - Getting Resolved</title>
+</head>
+<body>
+  
+  <script>
+    let p1 = new Promise ((resolve, reject) => {
+      alert("I'm going to get resolved.")
+      setTimeout(() => {
+        resolve(alert("This is resolved"))
+      }, 2000)
+    });
+
+    p1.then(() => {
+      console.log("This is the end of the promise after the resolution alert.")
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(400)
+        }, 2000)
+      })
+    }).then(value => {
+      console.log(value)
+    })
+
+    p1.then(value => {
+      console.log(value) // this line won't have a value, as each then function is independent, unless you chain them to one promise.
+      console.log("This is really a very extra line to execute.")
+    })
+  </script>
+</body>
+</html>

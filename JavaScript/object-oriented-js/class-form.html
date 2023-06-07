@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Class - Form Submission</title>
+</head>
+
+<body>
+  <script>
+    class TicketForm {
+      constructor(name, mobileNo, ticketNo, destination) {
+        this.name = name
+        this.mobileNo = mobileNo
+        this.ticketNo = ticketNo
+        this.destination = destination
+      }
+
+      submit() {
+        console.log('Form submitted by: ' + this.name)
+      }
+
+      cancel() {
+        this.ticketNo = 0
+        console.log('Ticket cancelled by: ' + this.name)
+      }
+
+      printReceipt() {
+        if (this.ticketNo >= 1) {
+          console.log(
+            'Ticket holder: ' + this.name +
+            '\nMobile number: ' + this.mobileNo +
+            '\nNo of ticket(s) purchased: ' + this.ticketNo +
+            '\nDestination: ' + this.destination
+          )
+        } else {
+          console.log('No ticket has been purchased under this name.')
+        }
+      }
+    }
+
+    let formGideon = new TicketForm('Gideon Fu', '97863952', 1, 'Kuala Lumpur');
+    let formMum = new TicketForm('Lim Seh Liew', '90056832', 1, 'Johor');
+
+    formGideon.submit();
+    formGideon.cancel();
+    formGideon.printReceipt();
+
+    formMum.submit();
+    formMum.printReceipt();
+  </script>
+</body>
+</html>
