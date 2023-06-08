@@ -24,7 +24,7 @@ function First() {
   });
 
   return (
-    <div>
+    <div className='mx-3'>
       <h5>Ecommerce Data</h5>
       {/* <button className='btn btn-primary'>Fetch products</button> */}
       {
