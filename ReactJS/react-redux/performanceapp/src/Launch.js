@@ -25,6 +25,10 @@ function Launch() {
       <h5>The number is {number} and its cube is: {result} </h5>
       <button className='btn btn-primary btn-sm m-2' onClick={decreaseIt}>-</button>
       <button className='btn btn-primary btn-sm m-2' onClick={increaseIt}>+</button>
+      <hr/>
+
+      <label>Enter Name:</label>
+      <input type='text' />
     </div>
   )
 }
