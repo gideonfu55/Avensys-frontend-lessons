@@ -56,6 +56,7 @@ function WeatherWidget({ city }) {
         <img src={weatherData.current.condition.icon}></img>
       </div>
     </div>
+    
   );
 }
 
