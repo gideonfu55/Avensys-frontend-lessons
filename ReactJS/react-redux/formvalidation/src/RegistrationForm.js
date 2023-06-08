@@ -16,7 +16,7 @@ function RegistrationForm() {
 
   return (
     <div className='mx-3'>
-    <h5>Registration Form</h5>
+    <h6 className='fw-bold'>Registration Form</h6>
       <form>
         <label>Enter Username:</label>
         <br />
