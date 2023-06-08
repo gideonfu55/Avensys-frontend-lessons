@@ -21,14 +21,14 @@ function MyChart() {
   })
 
   return (
-    <div>
-      <h5>MyChart</h5>
-      <div style={{width: 500, height: 500}}>
+    <div className="m-3">
+      <h5 className='fw-bold'>MyChart</h5>
+      <div className='d-flex' style={{width: 300, height: 250}}>
         <Bar data={chartData} />
-        <Scatter data={chartData} />
-        <Bubble data={chartData} />
         <Doughnut data={chartData} />
         <Line data={chartData} />
+        <Scatter data={chartData} />
+        <Bubble data={chartData} />
       </div>
     </div>
   )
