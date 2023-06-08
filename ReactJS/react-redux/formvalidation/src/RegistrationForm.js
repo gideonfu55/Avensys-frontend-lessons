@@ -19,20 +19,20 @@ function RegistrationForm() {
     <h6 className='fw-bold'>Registration Form</h6>
       <form>
         <label>Enter Username:</label>
-        <br />
-        <input type="text" name='username' value={formik.initialValues.username}/>
+        <br/>
+        <input type="text" name='username' value={formik.values.username}/>
 
-        <br /><br />
+        <br/><br/>
         <label>Enter Password:</label>
-        <br />
-        <input type="text" name='password' value={formik.initialValues.password}/>
+        <br/>
+        <input type="text" name='password' value={formik.values.password}/>
 
-        <br /><br />
+        <br/><br/>
         <label>Enter Email:</label>
-        <br />
-        <input type="text" name='email' value={formik.initialValues.email}/>
+        <br/>
+        <input type="text" name='email' value={formik.values.email}/>
 
-        <br /><br />
+        <br/><br/>
         <button className='btn btn-primary' type="submit">Submit</button>
       </form>
     </div>
