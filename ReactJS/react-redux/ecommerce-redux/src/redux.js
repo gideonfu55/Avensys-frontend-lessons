@@ -10,7 +10,6 @@ const initialProducts = {
 }
 
 // Create Actions:
-
 export const fetchProducts = () => {
   return (dispatch) => {
     get('https://fakestoreapi.com/products')
