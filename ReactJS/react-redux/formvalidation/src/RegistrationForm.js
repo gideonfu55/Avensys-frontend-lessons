@@ -9,6 +9,9 @@ function RegistrationForm() {
       password: '',
       email: ''
     },
+    onChange: values => {
+      console.log('Form data', values)
+    },
     onSubmit: values => {
       console.log('Form data', values)
     }
@@ -20,17 +23,17 @@ function RegistrationForm() {
       <form>
         <label>Enter Username:</label>
         <br/>
-        <input type="text" name='username' value={formik.values.username}/>
+        <input type="text" name='username' value={formik.values.username} onChange={formik.handleChange} />
 
         <br/><br/>
         <label>Enter Password:</label>
         <br/>
-        <input type="text" name='password' value={formik.values.password}/>
+        <input type="text" name='password' value={formik.values.password} onChange={formik.handleChange} />
 
         <br/><br/>
         <label>Enter Email:</label>
         <br/>
-        <input type="text" name='email' value={formik.values.email}/>
+        <input type="text" name='email' value={formik.values.email} onChange={formik.handleChange} />
 
         <br/><br/>
         <button className='btn btn-primary' type="submit">Submit</button>
