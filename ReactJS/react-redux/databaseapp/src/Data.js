@@ -1,11 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
 import { db } from './authentication/firebase'
+import { useEffect } from 'react'
 
 function Data() {
 
   const [ myTitle, setMyTitle ] = useState('')
   const [ myDescription, setMyDescription ] = useState('')
+  const [ dbData, setDbData ] = useState([])
 
   const collectTitle = (event) => setMyTitle(event.target.value)
   const collectDescription = (event) => setMyDescription(event.target.value)
@@ -29,6 +31,18 @@ function Data() {
     }
   }
 
+  useEffect(() => {
+    // Logic to read data from the firestore database
+    db.collection("myData").onSnapshot((snapshotData) => {
+      const data = [];
+      snapshotData.forEach(doc => {
+        data.push(doc)
+      });
+      setDbData(data);
+    })
+  })
+
+
   return (
     <div className='m-3'>
       <label className='fw-bold mt-1 mb-1'>Enter Title:</label>
@@ -40,6 +54,28 @@ function Data() {
       <textarea onChange={collectDescription} rows={10} cols={25}></textarea>
       <br/><br/>
       <button onClick={saveDataToDB} className='btn btn-primary'>Save</button>
+
+      <h5 className='mt-3 fw-bold mt-4 mb-2'>Database Entries:</h5>
+        <table className='table table-primary'>
+          <thead>
+            <tr class="table-success">
+              <th>Title</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              dbData.map((doc) => {
+                return (
+                  <tr>
+                    <td>{doc.data().title}</td>
+                    <td>{doc.data().description}</td>
+                  </tr>
+                )
+              })
+            }
+          </tbody>
+        </table>
     </div>
   )
 }
