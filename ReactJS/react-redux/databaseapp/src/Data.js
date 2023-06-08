@@ -58,16 +58,18 @@ function Data() {
       <h5 className='mt-3 fw-bold mt-4 mb-2'>Database Entries:</h5>
         <table className='table table-primary'>
           <thead>
-            <tr class="table-success">
+            <tr className="table-success">
+              <th>ID</th>
               <th>Title</th>
               <th>Description</th>
             </tr>
           </thead>
           <tbody>
             {
-              dbData.map((doc) => {
+              dbData.map((doc, index) => {
                 return (
-                  <tr>
+                  <tr key={doc.id}>
+                    <td>{index + 1}</td>
                     <td>{doc.data().title}</td>
                     <td>{doc.data().description}</td>
                   </tr>
