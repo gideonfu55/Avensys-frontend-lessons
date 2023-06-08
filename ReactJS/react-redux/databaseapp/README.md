@@ -1,6 +1,6 @@
 # Project image
 
-![database-app](https://github.com/gideonfu55/Avensys-frontend-lessons/assets/94817218/4e70d87b-e6ec-4cbe-a394-7a75a8033c61)
+![database-app](https://github.com/gideonfu55/Avensys-frontend-lessons/assets/94817218/2e2267e1-b042-4934-a490-c70f659023a8)
 
 ## `npm start`
 
