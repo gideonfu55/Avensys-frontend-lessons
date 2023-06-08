@@ -9,6 +9,10 @@ function RegistrationForm() {
       password: '',
       email: ''
     },
+
+    validate: data => {
+      console.log(data)
+    },
     onChange: values => {
       console.log('Form data', values)
     },
