@@ -1,11 +1,21 @@
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+
+  const [count, setCount] = useState(0);
+
+  const increaseCount = () => {
+    setCount(count + 1);
+  }
+
   return (
-    <div className="App">
+    <div className="App m-3">
       <h5>Testing React Code</h5>
       <p>Hello World!</p>
-      <button></button>
+
+      <h5>This count is : {count}</h5>
+      <button onClick={increaseCount} className='btn btn-primary btn-sm'>+</button>
     </div>
   );
 }
