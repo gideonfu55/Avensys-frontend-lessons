@@ -39,11 +39,11 @@ describe('Testing App Components', () => {
   });
 
   // Test Case 5: Check if the table row is at least 1:
-  test('Check if the table row is at least 1', async() => {
+  test('Check that the number of table rows is 21', async() => {
     render(<App />);
     await waitFor(async () => {
     const tableRows = await screen.findAllByRole('row');
-    expect(tableRows.length).toBeGreaterThan(1);
+    expect(tableRows.length).toEqual(21);
   });
   });
 });
