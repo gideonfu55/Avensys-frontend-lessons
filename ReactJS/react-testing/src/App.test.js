@@ -3,6 +3,6 @@ import App from './App';
 
 test('renders learn react link', async() => {
   render(<App />);
-  const myData = await screen.findByText("Testing React code");
+  const myData = await screen.findByText("Testing React Code");
   expect(myData).toBeInTheDocument();
 });
