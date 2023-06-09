@@ -66,5 +66,3 @@ function ActionMovies() {
 }
 
 export default ActionMovies
-
-//  https://api.themoviedb.org/3/discover/movie?api_key=a3f0d1b1d5874d21139169f1e0790276&with_genres=28
