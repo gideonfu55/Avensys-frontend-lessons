@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import App from './App';
 
 describe('Testing App Components', () => {
@@ -41,8 +41,10 @@ describe('Testing App Components', () => {
   // Test Case 5: Check if the table row is at least 1:
   test('Check if the table row is at least 1', async() => {
     render(<App />);
+    await waitFor(async () => {
     const tableRows = await screen.findAllByRole('row');
     expect(tableRows.length).toBeGreaterThan(1);
+  });
   });
 });
   

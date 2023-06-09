@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import get from 'axios';
 
 function App() {
 
@@ -12,12 +11,15 @@ function App() {
   }
 
   useEffect(() => {
-    get('https://fakestoreapi.com/products')
-    .then((response) => {
-      // console.log(response.data);
-      setProductsData(response.data);
+    fetch('https://fakestoreapi.com/products')
+    .then(response => {
+      return response.json();
     })
-    .catch((error) => {
+    .then(data => {
+      // console.log(data);
+      setProductsData(data);
+    })
+    .catch(error => {
       console.log(error);
     });
   });
