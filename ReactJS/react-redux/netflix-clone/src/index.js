@@ -1,9 +1,12 @@
 import React from 'react'
 import { render } from 'react-dom'
+import Navbar from './components/Navbar'
 
 function App() {
   return (
-    <div>We are creating a Netflix clone!</div>
+    <div>
+      <Navbar />
+    </div>
   )
 }
 
