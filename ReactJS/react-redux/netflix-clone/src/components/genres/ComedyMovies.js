@@ -19,7 +19,7 @@ function ComedyMovies() {
   }, [])
 
   return (
-    <div className='mt-3'>
+    <div className='mt-5'>
       <h4 className='text-light ms-3 mb-3'>Comedy Movies</h4>
       <div className='movies d-flex overflow-auto'>
         {comedyMovies.map(movie => (
