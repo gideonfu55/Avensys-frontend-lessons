@@ -15,5 +15,13 @@ describe('Testing App Components', () => {
     const myData2 = screen.getByText("Hello World!");
     expect(myData2).toBeInTheDocument();
   });
+
+  test('Starting Count Value', () => {
+    render(<App />);
+    const countValueElement = screen.getByTestId("countvalue");
+    const countValueText = countValueElement.innerHTML;
+    const countValue = parseInt(countValueText.match(/\d+/)[0]);
+    expect(countValue).toEqual(0);
+  });
 });
   
