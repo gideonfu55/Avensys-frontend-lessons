@@ -38,8 +38,8 @@ function App() {
         <table className='table table-primary'>
           <thead>
             <tr className='table-success'>
-              <th>Title</th>
               <th>Image</th>
+              <th>Title</th>
               <th>Description</th>
             </tr>
           </thead>
@@ -49,8 +49,8 @@ function App() {
               productsData.map((product) => {
                 return (
                   <tr key={product.id}>
-                    <td>{product.title}</td>
                     <td><img src={product.image} alt={product.title} width={150}/></td>
+                    <td>{product.title}</td>
                     <td>{product.description}</td>
                   </tr>
                 );
