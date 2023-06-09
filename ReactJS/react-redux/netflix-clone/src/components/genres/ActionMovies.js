@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import get from 'axios'
+import ".././style.css"
 
 function ActionMovies() {
 
@@ -21,7 +22,7 @@ function ActionMovies() {
   return (
     <div className='mt-3'>
       <h4 className='text-light ms-3 mb-3'>Action Movies</h4>
-      <div className='movies d-flex overflow-auto'>
+      <div className='movies d-flex'>
         {actionMovies.map(movie => (
           <div className='movie mx-3 mb-3' key={movie.id}>
             <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title} />
