@@ -1,4 +1,4 @@
-# Avensys-html-exercises
+# Avensys Frontend Lessons & Assignments
 
 ## HTML Assignments
 
