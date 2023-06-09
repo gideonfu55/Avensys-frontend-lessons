@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-function App() {
+export function App() {
   return (
     <div>
       <h3>React Test App</h3>
