@@ -30,8 +30,10 @@ describe('Testing App Components', () => {
     const theButton = screen.getByRole('button', {name: '+'});
 
     await theButton.click();
+   
     const countValueText = screen.getByTestId("countvalue").innerHTML;
     const countValue = parseInt(countValueText.match(/\d+/)[0]);
+    
     expect(countValue).toEqual(1);
   });
 });
