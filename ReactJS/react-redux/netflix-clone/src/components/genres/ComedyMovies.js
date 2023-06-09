@@ -20,7 +20,7 @@ function ComedyMovies() {
       .catch(error => {
         console.log(error)
       })
-  }, [])
+  })
 
   const handleClick = () => {
     console.log('Movie clicked')

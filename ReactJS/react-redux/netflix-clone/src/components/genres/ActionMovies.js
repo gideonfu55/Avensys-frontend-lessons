@@ -22,7 +22,7 @@ function ActionMovies() {
       .catch(error => {
         console.log(error)
       })
-  }, [])
+  })
 
   const handleClick = (movieName) => {
     movieTrailer(movieName)
