@@ -31,14 +31,12 @@ span > a:hover {
 }
 
 .movies:hover {
-  display: flex;
-  overflow-x: auto;
+  overflow: auto;
   scrollbar-width: thin;
-  scrollbar-color: transparent transparent;
 }
 
 .movies::-webkit-scrollbar {
-  width: 7px;
+  width: 5px;
 }
 
 .movies::-webkit-scrollbar-track {
