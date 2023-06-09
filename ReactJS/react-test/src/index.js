@@ -1,10 +1,12 @@
 import React from 'react'
 import { render } from 'react-dom'
+import Launch from './Launch'
 
-export function App() {
+function App() {
   return (
     <div>
       <h3>React Test App</h3>
+      <Launch />
     </div>
   )
 }

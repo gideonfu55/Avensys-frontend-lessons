@@ -1,11 +1,11 @@
+/* eslint-disable testing-library/await-async-query */
 import { render, screen } from "@testing-library/react";
-import { App } from ".";
+import App from "./index.js";
+import Launch from "./Launch.js";
 
 // First Test
-test('Checking whether App component is returning the message "React Test App"', () => {
-
-  // Logic to check: render the App component
-  render(<App />);
-  const linkElement = screen.getByText(/React Test App/i);
-  expect(linkElement).toBeInTheDocument();
+test('Checking whether App component is returning the message "React Test App"', async () => {
+  render(<Launch />);
+  const myData = await screen.findByText(/Testing React code/i);
+  expect(myData).toBeInTheDocument();
 });
