@@ -34,6 +34,7 @@ function App() {
 
       <div className='mt-5'>
         <h5>Getting table of items from Fakestore:</h5>
+
         <table className='table table-primary'>
           <thead>
             <tr className='table-success'>
@@ -42,6 +43,7 @@ function App() {
               <th>Description</th>
             </tr>
           </thead>
+
           <tbody>
             {
               productsData.map((product) => {
@@ -55,7 +57,6 @@ function App() {
               })
             }
           </tbody>
-
         </table>
       </div>
     </div>
