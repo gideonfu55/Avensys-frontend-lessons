@@ -25,6 +25,7 @@ describe('Testing App Components', () => {
     expect(countValue).toEqual(0);
   });
 
+  // Test Case 4: Check if the count increments when the button is clicked
   test('Clicking the button increments the count', async() => {
     render(<App />);
     const theButton = screen.getByRole('button', {name: '+'});
@@ -33,8 +34,15 @@ describe('Testing App Components', () => {
    
     const countValueText = screen.getByTestId("countvalue").innerHTML;
     const countValue = parseInt(countValueText.match(/\d+/)[0]);
-    
+
     expect(countValue).toEqual(1);
+  });
+
+  // Test Case 5: Check if the table row is at least 1:
+  test('Check if the table row is at least 1', async() => {
+    render(<App />);
+    const tableRows = await screen.findAllByRole('row');
+    expect(tableRows.length).toBeGreaterThan(1);
   });
 });
   
