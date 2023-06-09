@@ -16,12 +16,23 @@ describe('Testing App Components', () => {
     expect(myData2).toBeInTheDocument();
   });
 
+  // Test Case 3: Check if the initial count is 0
   test('Starting Count Value', () => {
     render(<App />);
     const countValueElement = screen.getByTestId("countvalue");
     const countValueText = countValueElement.innerHTML;
     const countValue = parseInt(countValueText.match(/\d+/)[0]);
     expect(countValue).toEqual(0);
+  });
+
+  test('Clicking the button increments the count', async() => {
+    render(<App />);
+    const theButton = screen.getByRole('button', {name: '+'});
+
+    await theButton.click();
+    const countValueText = screen.getByTestId("countvalue").innerHTML;
+    const countValue = parseInt(countValueText.match(/\d+/)[0]);
+    expect(countValue).toEqual(1);
   });
 });
   
