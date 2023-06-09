@@ -7,13 +7,14 @@ import YouTube from 'react-youtube'
 function ActionMovies() {
 
   const apiKey = process.env.REACT_APP_TMDB_API_KEY;
+  const tmdbUrl = 'https://api.themoviedb.org/3/discover/movie?api_key='
   const imageUrl = 'https://image.tmdb.org/t/p/w200'
   const [ actionMovies, setActionMovies ] = useState([])
   const [ id, setId ] = useState('')
 
   useEffect(() => {
     // Logic to import action movies from the TMDB API:
-    get(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=28`)
+    get(`${tmdbUrl}${apiKey}&with_genres=28`)
       .then(response => {
         // console.log(response.data.results)
         setActionMovies(response.data.results)
