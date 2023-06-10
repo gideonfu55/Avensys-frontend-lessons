@@ -1,30 +1,31 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
 import get from 'axios'
-import ".././style.css"
+import "./style.css"
 import YouTube from 'react-youtube'
 
-function ComedyMovies() {
+function Movies({ genreId, genreTitle }) {
 
   const tmdbApiKey = process.env.REACT_APP_TMDB_API_KEY;
   const ydApiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
   const tmdbUrl = 'https://api.themoviedb.org/3/discover/movie?api_key='
   const ydUrl = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q='
   const imageUrl = 'https://image.tmdb.org/t/p/w200'
-  const [ comedyMovies, setComedyMovies ] = useState([])
+  const [ Movies, setMovies ] = useState([])
   const [ id, setId ] = useState('')
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await get(`${tmdbUrl}${tmdbApiKey}&with_genres=35`);
-        setComedyMovies(response.data.results);
+        const response = await get(`${tmdbUrl}${tmdbApiKey}&with_genres=${genreId}`);
+        setMovies(response.data.results);
       } catch (error) {
         console.error(error);
       }
     };
 
     fetchMovies();
-  }, [tmdbApiKey])
+  }, [tmdbApiKey, genreId])
 
   const handleClick = async(movieTitle) => {
     try {
@@ -52,11 +53,10 @@ function ComedyMovies() {
   }
 
   return (
-    <div className='mt-5'>
-      <h4 className='text-light ms-3 mb-3'>Comedy Movies</h4>
-      {/* For displaying movie thumbnails and information */}
+    <div className='mt-3'>
+      <h4 className='text-light ms-3 mb-3'>{genreTitle} Movies</h4>
       <div className='movies d-flex'>
-        {comedyMovies.map(movie => (
+        {Movies.map(movie => (
           <div className='movie mx-3 mb-3' key={movie.id}>
             <img onClick={ () => handleClick(movie.title) } src={`${imageUrl}${movie.poster_path}`} alt={movie.title} />
             <div className='movie-info text-light mt-3'>
@@ -66,8 +66,8 @@ function ComedyMovies() {
           </div>
         ))}
       </div>
-      
-      <h5 className='text-light ms-3 mb-3 mt-5'>Comedy Movies Trailer</h5>
+
+      <h5 className='text-light ms-3 mb-3 mt-5'>{genreTitle} Movies Trailer</h5>
       <center>
         <div>
           <YouTube videoId={id} opts={controls}/>
@@ -77,4 +77,4 @@ function ComedyMovies() {
   )
 }
 
-export default ComedyMovies
+export default Movies
