@@ -47,7 +47,7 @@ function ActionMovies() {
   };
 
   const controls = { 
-    width: '100%', 
+    width: '80%', 
     height: '700px', 
     playerVars: { autoplay: 1 } 
   }
@@ -67,10 +67,12 @@ function ActionMovies() {
         ))}
       </div>
 
-      <h5 className='text-light ms-3 mb-3 mt-4'>Action Movies Trailer</h5>
-      <div>
-        <YouTube videoId={id} opts={controls}/>
-      </div>
+      <h5 className='text-light ms-3 mb-3 mt-5'>Action Movies Trailer</h5>
+      <center>
+        <div>
+          <YouTube videoId={id} opts={controls}/>
+        </div>
+      </center>
     </div>
   )
 }
