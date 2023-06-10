@@ -67,7 +67,7 @@ function ComedyMovies() {
         ))}
       </div>
       
-      For playing movie trailers according to the movie image clicked
+      <h5 className='text-light ms-3 mb-3'>Comedy Movies Trailer</h5>
       <div>
         <YouTube videoId={id} opts={controls}/>
       </div>
