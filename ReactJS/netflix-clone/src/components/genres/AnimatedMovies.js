@@ -69,7 +69,7 @@ function AnimatedMovies() {
         ))}
       </div>
       
-      <h5 className='text-light ms-3 mb-3'>Animated Movies Trailer</h5>
+      <h5 className='text-light ms-3 mb-3 mt-3'>Animated Movies Trailer</h5>
       <div>
         <YouTube videoId={id} opts={controls}/>
       </div>
