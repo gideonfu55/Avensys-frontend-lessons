@@ -2,7 +2,7 @@ import get from 'axios'
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
-// Create State - Your initial data in the todolist:
+// Create State - Your initial data in the product list:
 const initialProducts = {
   products: [],
   loading: true,
