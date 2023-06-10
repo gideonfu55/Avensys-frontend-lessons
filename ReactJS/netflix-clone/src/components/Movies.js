@@ -12,11 +12,12 @@ function Movies({ genreId, genreTitle }) {
   const ydUrl = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q='
   const imageUrl = 'https://image.tmdb.org/t/p/w200'
   const [ Movies, setMovies ] = useState([])
-  const [ id, setId ] = useState('')
+  const [ videoId, setVideoId ] = useState('')
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
+        // Search for movies by genre on TMDB:
         const response = await get(`${tmdbUrl}${tmdbApiKey}&with_genres=${genreId}`);
         setMovies(response.data.results);
       } catch (error) {
@@ -29,23 +30,28 @@ function Movies({ genreId, genreTitle }) {
 
   const handleClick = async(movieTitle) => {
     try {
-      // Search for the movie trailer on YouTube:
+      // Improve search terms:
       const searchQuery = `${encodeURIComponent(movieTitle)}+trailer`;
+
+      // Search for the movie trailer data on YouTube Data API:
       const response = await get(`${ydUrl}${searchQuery}&key=${ydApiKey}`);
       
-      // Extract the videoId from the response's data:
+      // Get the youtube videoId from the response's data:
       const myVideoId = response.data.items[0].id.videoId;
 
+      // Set the videoId state if it exists, else log an not found message:
       if (myVideoId) {
-        setId(myVideoId);
+        setVideoId(myVideoId);
       } else {
         console.log('Video ID not found.');
       }
+
     } catch (error) {
       console.log(error);
     }
   };
 
+  // Set the YouTube player controls:
   const controls = { 
     width: '80%', 
     height: '700px', 
@@ -70,7 +76,7 @@ function Movies({ genreId, genreTitle }) {
       <h5 className='text-light ms-3 mb-3 mt-5'>{genreTitle} Movies Trailer</h5>
       <center>
         <div>
-          <YouTube videoId={id} opts={controls}/>
+          <YouTube videoId={videoId} opts={controls}/>
         </div>
       </center>
     </div>
