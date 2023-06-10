@@ -21,10 +21,6 @@ function App() {
     return unsubscribe;
   }, [])
 
-  if (!user) {
-    return <Login />
-  }
-
   if (user) {
     return (
       <div>
@@ -34,7 +30,9 @@ function App() {
         <Movies genreId={16} genreTitle={'Animated'}/>
       </div>
     )
-  }
+  } else return (
+    <Login/>
+  )
 }
 
 render(<App />, document.getElementById('root'))
