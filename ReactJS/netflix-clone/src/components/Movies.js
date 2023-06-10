@@ -11,7 +11,7 @@ function Movies({ genreId, genreTitle }) {
   const tmdbUrl = 'https://api.themoviedb.org/3/discover/movie?api_key='
   const ydUrl = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q='
   const imageUrl = 'https://image.tmdb.org/t/p/w200'
-  const [ Movies, setMovies ] = useState([])
+  const [ movies, setMovies ] = useState([])
   const [ videoId, setVideoId ] = useState('')
 
   useEffect(() => {
@@ -62,7 +62,7 @@ function Movies({ genreId, genreTitle }) {
     <div className='mt-3'>
       <h4 className='text-light ms-3 mb-3'>{genreTitle} Movies</h4>
       <div className='movies d-flex'>
-        {Movies.map(movie => (
+        {movies.map(movie => (
           <div className='movie mx-3 mb-3' key={movie.id}>
             <img onClick={ () => handleClick(movie.title) } src={`${imageUrl}${movie.poster_path}`} alt={movie.title} />
             <div className='movie-info text-light mt-3'>
