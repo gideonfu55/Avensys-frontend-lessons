@@ -1,41 +1,50 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
 import get from 'axios'
 import ".././style.css"
-import movieTrailer from 'movie-trailer'
 import YouTube from 'react-youtube'
 
 function ActionMovies() {
 
-  const apiKey = process.env.REACT_APP_TMDB_API_KEY;
+  const tmdbApiKey = process.env.REACT_APP_TMDB_API_KEY;
+  const ydApiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
   const tmdbUrl = 'https://api.themoviedb.org/3/discover/movie?api_key='
+  const ydUrl = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q='
   const imageUrl = 'https://image.tmdb.org/t/p/w200'
   const [ actionMovies, setActionMovies ] = useState([])
   const [ id, setId ] = useState('')
 
   useEffect(() => {
-    // Logic to import action movies from the TMDB API:
-    get(`${tmdbUrl}${apiKey}&with_genres=28`)
-      .then(response => {
-        // console.log(response.data.results)
-        setActionMovies(response.data.results)
-      })
-      .catch(error => {
-        console.log(error)
-      })
-  })
+    const fetchMovies = async () => {
+      try {
+        const response = await get(`${tmdbUrl}${tmdbApiKey}&with_genres=28`);
+        setActionMovies(response.data.results);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-  const handleClick = (movieName) => {
-    movieTrailer(movieName)
-      .then(response => {
-        // console.log(response)
-        const myVideoId = new URLSearchParams(new URL(response).search).get('v')
-        console.log(myVideoId)
-        setId(myVideoId)
-      })
-      .catch(error => {
-        console.log(error)
-      })
+    fetchMovies();
+  }, [tmdbApiKey])
+
+  const handleClick = async(movieTitle) => {
+    try {
+      // Search for the movie trailer on YouTube:
+      const searchQuery = `${encodeURIComponent(movieTitle)}+trailer`;
+      const response = await get(`${ydUrl}${searchQuery}&key=${ydApiKey}`);
+      
+      // Extract the videoId from the response's data:
+      const myVideoId = response.data.items[0].id.videoId;
+
+      if (myVideoId) {
+        setId(myVideoId);
+      } else {
+        console.log('Video ID not found.');
+      }
+    } catch (error) {
+      console.log(error);
     }
+  };
 
   const controls = { 
     width: '100%', 

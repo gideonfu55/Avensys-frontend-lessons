@@ -32,12 +32,12 @@ span > a:hover {
 
 .movies:hover {
   overflow: auto;
-  scrollbar-width: thin;
+  scrollbar-width: thin;  
 }
 
-.movies::-webkit-scrollbar {
+/* .movies::-webkit-scrollbar {
   width: 5px;
-}
+} */
 
 .movies::-webkit-scrollbar-track {
   background-color: #f1f1f1;
