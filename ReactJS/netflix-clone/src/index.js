@@ -15,3 +15,4 @@ function App() {
 }
 
 render(<App />, document.getElementById('root'))
+// render(<Provider store={movieStore}><App /></Provider>, document.getElementById('root'))
